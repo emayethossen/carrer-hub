@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home />,
-        // loader:()=>fetch('https://raw.githubusercontent.com/Porgramming-Hero-web-course/b7a9-career-hub-emayethossen/main/public/featured.json?token=GHSAT0AAAAAAB7PXUJUXFCUZLA474MQCBNOZBTPR5A')
+        loader:()=>fetch('https://raw.githubusercontent.com/Porgramming-Hero-web-course/b7a9-career-hub-emayethossen/main/public/featured.json?token=GHSAT0AAAAAAB7PXUJUXFCUZLA474MQCBNOZBTPR5A')
       },
       {
         path:'/blog',

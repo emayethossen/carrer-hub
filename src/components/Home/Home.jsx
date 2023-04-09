@@ -4,7 +4,8 @@ import Category from '../Category/Category';
 import JobCard from '../JobCard/JobCard';
 
 const Home = () => {
-    const cards = useLoaderData()
+    const { jobCards } = useLoaderData()
+    console.log(jobCards);
     // console.log(cards);
     // const [categories, setCategories] = useState([])
 
@@ -13,14 +14,6 @@ const Home = () => {
     //         .then(res => res.json())
     //         .then(data => setCategories(data))
     // }, [])
-
-    const [categories, setCategories] = useState([])
-
-    useEffect(() => {
-        fetch('https://raw.githubusercontent.com/Porgramming-Hero-web-course/b7a9-career-hub-emayethossen/main/public/featured.json?token=GHSAT0AAAAAAB7PXUJUXFCUZLA474MQCBNOZBTPR5A')
-            .then(res => res.json())
-            .then(data => console.log(data))
-    }, [])
 
     return (
         <div>
@@ -52,7 +45,7 @@ const Home = () => {
                 <h1 className='font-bold my-8 text-center text-3xl mt-8'>Featured Jobs</h1>
                 <p className='text-center'>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 <div className='w-3/4 my-8 mx-auto grid md:grid-cols-2 gap-6'>
-                
+
                 </div>
             </section>
         </div>

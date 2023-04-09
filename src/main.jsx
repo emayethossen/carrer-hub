@@ -10,6 +10,7 @@ import Home from './components/Home/Home';
 import Root from './components/Layout/Root';
 import Blog from './components/Blog/Blog';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import JobDetails from './components/JobDetails/JobDetails';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home />,
-        loader:()=>fetch('category.json')
+        // loader:()=>fetch('https://raw.githubusercontent.com/Porgramming-Hero-web-course/b7a9-career-hub-emayethossen/main/public/featured.json?token=GHSAT0AAAAAAB7PXUJUXFCUZLA474MQCBNOZBTPR5A')
       },
       {
         path:'/blog',

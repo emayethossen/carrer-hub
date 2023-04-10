@@ -16,16 +16,21 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement:<ErrorPage />,
-    children:[
+    errorElement: <ErrorPage />,
+    children: [
       {
-        path:'/',
-        element:<Home />,
-        loader:()=>fetch('https://raw.githubusercontent.com/Porgramming-Hero-web-course/b7a9-career-hub-emayethossen/main/public/featured.json?token=GHSAT0AAAAAAB7PXUJUXFCUZLA474MQCBNOZBTPR5A')
+        path: '/',
+        element: <Home />,
+        loader: () => fetch('https://raw.githubusercontent.com/Porgramming-Hero-web-course/b7a9-career-hub-emayethossen/main/public/featured.json?token=GHSAT0AAAAAAB7PXUJV7462S3MR73PW2MDMZBT2EJQ')
       },
       {
-        path:'/blog',
-        element:<Blog />
+        path: '/:id',
+        element: <JobDetails />,
+        loader: ({ params }) => fetch(`https://raw.githubusercontent.com/Porgramming-Hero-web-course/b7a9-career-hub-emayethossen/main/public/featured.json?token=GHSAT0AAAAAAB7PXUJV7462S3MR73PW2MDMZBT2EJQ/${params.id}`)
+      },
+      {
+        path: '/blog',
+        element: <Blog />
       }
     ]
   },

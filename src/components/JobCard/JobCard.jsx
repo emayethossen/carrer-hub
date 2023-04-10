@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom';
 
 const JobCard = ({ card }) => {
-    const { image, title, companyName, jobType, description, location, salary, responsibilities, phone, email, experience, education } = card
+    const {id, image, title, companyName, jobType, description, location, salary, responsibilities, phone, email, experience, education } = card
     return (
         <div className='border shadow-xl rounded-xl space-y-4'>
             <img className='object-cover h-56 md:h-72 rounded w-full' src={image} alt="" />
@@ -18,7 +18,7 @@ const JobCard = ({ card }) => {
                     <p><FontAwesomeIcon icon={faLocation} /> {location} </p>
                     <p><FontAwesomeIcon icon={faDollar} /> Salary: {salary} </p>
                 </div>
-                <Link to='/'>
+                <Link to={`/${id}`}>
                 <button className='btn btn-primary mt-4'>View Details</button>
                 </Link>
             </div>

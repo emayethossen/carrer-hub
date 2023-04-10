@@ -4,16 +4,15 @@ import Category from '../Category/Category';
 import JobCard from '../JobCard/JobCard';
 
 const Home = () => {
-    const { jobCards } = useLoaderData()
-    console.log(jobCards);
-    // console.log(cards);
-    // const [categories, setCategories] = useState([])
+    const cards = useLoaderData()
+    console.log(cards);
+    const [categories, setCategories] = useState([])
 
-    // useEffect(() => {
-    //     fetch('category.json')
-    //         .then(res => res.json())
-    //         .then(data => setCategories(data))
-    // }, [])
+    useEffect(() => {
+        fetch('category.json')
+            .then(res => res.json())
+            .then(data => setCategories(data))
+    }, [])
 
     return (
         <div>
@@ -30,7 +29,7 @@ const Home = () => {
                 </div>
             </section>
             {/* Job Category Section */}
-            {/* <section >
+            <section >
                 <h1 className='font-bold text-center text-3xl mt-8'>Job Category List</h1>
                 <div className='w-3/4 my-8 mx-auto grid lg:grid-cols-4 md:grid-cols-2 gap-6'>
                     {
@@ -39,13 +38,17 @@ const Home = () => {
                             category={category} />)
                     }
                 </div>
-            </section> */}
+            </section>
             {/* Featured Section */}
             <section>
                 <h1 className='font-bold my-8 text-center text-3xl mt-8'>Featured Jobs</h1>
                 <p className='text-center'>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 <div className='w-3/4 my-8 mx-auto grid md:grid-cols-2 gap-6'>
-
+                    {
+                        cards.map(card => <JobCard
+                            key={card.id}
+                            card={card} />)
+                    }
                 </div>
             </section>
         </div>

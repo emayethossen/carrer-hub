@@ -6,7 +6,6 @@ import logo from "../../assets/riad.png"
 
 const Home = () => {
     const cards = useLoaderData()
-    console.log(cards);
     const [categories, setCategories] = useState([])
 
     useEffect(() => {

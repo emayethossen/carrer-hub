@@ -26,19 +26,19 @@ const router = createBrowserRouter([
       },
       {
         path: '/:id',
-        element: <JobDetails />,
-        loader: ({ params }) => fetch(`https://drive.google.com/file/d/1uB7v2O7XufDWg3oRk1wy5YGC9Ggel3qE/view?usp=share_link/${params.id}`)
+        element: <JobDetails />
       },
       {
         path: '/blog',
         element: <Blog />
       },
       {
-        path: '/statistics',
-        element: <AppliedJobs />
+        path: '/applied-jobs',
+        element: <AppliedJobs />,
+        loader: () => fetch('featured.json')
       },
       {
-        path: '/applied-jobs',
+        path: '/statistics',
         element: <Statistics />
       }
     ]

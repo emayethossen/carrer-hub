@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import logo from '../../assets/facebook.png'
+import logo2 from '../../assets/twitter.png'
+import logo3 from '../../assets/linkedin.png'
 
 const Footer = () => {
     return (
@@ -10,10 +13,10 @@ const Footer = () => {
                 <div className='text-center lg:text-left space-y-4'>
                     <h2 className='footer-title'>CarrerHub</h2>
                     <p className='text-sm'>There are many variations of passages of Lorem Ipsum , but the majority have suffered alteration in some form.</p>
-                    <div className='space-x-6'>
-                        <FontAwesomeIcon icon={faEnvelope} />
-                        <FontAwesomeIcon icon={faEnvelope} />
-                        <FontAwesomeIcon icon={faEnvelope} />
+                    <div className='space-x-3 flex justify-center md:justify-start'>
+                        <img className='w-5 h-5' src={logo} alt="" />
+                        <img className='w-5 h-5' src={logo2} alt="" />
+                        <img className='w-5 h-5' src={logo3} alt="" />
                     </div>
                 </div>
                 <div className='text-center lg:text-left space-y-4'>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-  import { faLocation, faDollar } from '@fortawesome/free-solid-svg-icons'
+import { faLocation, faDollar, faPhone, faEnvelope, faTasks } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 
 const JobCard = ({ card }) => {
-    const {id, image, title, companyName, jobType, description, location, salary, responsibilities, phone, email, experience, education } = card
+    const { id, image, title, companyName, jobType, description, location, salary, responsibilities, phone, email, experience, education } = card
     return (
         <div className='border shadow-xl rounded-xl space-y-4'>
             <img className='object-cover h-56 md:h-72 rounded w-full' src={image} alt="" />

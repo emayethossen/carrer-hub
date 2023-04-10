@@ -17,7 +17,7 @@ const Header = () => {
                             <Link to='/blog'>Blog</Link>
                         </ul>
                     </div>
-                    <Link to='/' className="text-3xl font-bold text-sky-500">Career Hub</Link>
+                    <Link to='/' className="text-3xl font-bold text-sky-500">Remote Job</Link>
                 </div>
 
                 <div className="navbar-center hidden lg:flex">
@@ -30,7 +30,7 @@ const Header = () => {
                 </div>
 
                 <div className="navbar-end">
-                    <a className="btn">Get started</a>
+                    <Link className="btn">Start Applying</Link>
                 </div>
             </div>
 

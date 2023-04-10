@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -11,6 +10,8 @@ import Root from './components/Layout/Root';
 import Blog from './components/Blog/Blog';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import JobDetails from './components/JobDetails/JobDetails';
+import AppliedJobs from './components/AppliedJobs/AppliedJobs';
+import Statistics from './components/Statistics/Statistics';
 
 const router = createBrowserRouter([
   {
@@ -21,16 +22,24 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-        loader: () => fetch('https://raw.githubusercontent.com/Porgramming-Hero-web-course/b7a9-career-hub-emayethossen/main/public/featured.json?token=GHSAT0AAAAAAB7PXUJV7462S3MR73PW2MDMZBT2EJQ')
+        loader: () => fetch('featured.json')
       },
       {
         path: '/:id',
         element: <JobDetails />,
-        loader: ({ params }) => fetch(`https://raw.githubusercontent.com/Porgramming-Hero-web-course/b7a9-career-hub-emayethossen/main/public/featured.json?token=GHSAT0AAAAAAB7PXUJV7462S3MR73PW2MDMZBT2EJQ/${params.id}`)
+        loader: ({ params }) => fetch(`https://drive.google.com/file/d/1uB7v2O7XufDWg3oRk1wy5YGC9Ggel3qE/view?usp=share_link/${params.id}`)
       },
       {
         path: '/blog',
         element: <Blog />
+      },
+      {
+        path: '/statistics',
+        element: <AppliedJobs />
+      },
+      {
+        path: '/applied-jobs',
+        element: <Statistics />
       }
     ]
   },

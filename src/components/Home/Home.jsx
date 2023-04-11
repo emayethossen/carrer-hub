@@ -7,6 +7,11 @@ import logo from "../../assets/riad.png"
 const Home = () => {
     const cards = useLoaderData()
     const [categories, setCategories] = useState([])
+    const [showAll, setShowAll] = useState(false)
+
+    const handleShowall = () => {
+        setShowAll(true)
+    }
 
     useEffect(() => {
         fetch('category.json')
@@ -46,11 +51,18 @@ const Home = () => {
                 <div className='w-3/4 my-8 mx-auto grid md:grid-cols-2 gap-6'>
 
                     {
-                        cards.map(card => <JobCard
+                        cards.slice(0, showAll ? 8 : 4).map(card => <JobCard
                             key={card.id}
                             card={card} />)
                     }
                 </div>
+                {
+                    !showAll && (
+                        <div className='text-center mb-8'>
+                            <button onClick={handleShowall} className="px-16 btn btn-error">See More</button>
+                        </div>
+                    )
+                }
             </section>
         </div>
     );
